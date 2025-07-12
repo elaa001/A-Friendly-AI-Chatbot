@@ -5,7 +5,7 @@ from langchain.memory import ConversationBufferMemory
 
 
 
-# Set page config
+
 st.set_page_config(page_title="Elaa's Chatbot", page_icon="🤖", layout="centered")
 
 st.markdown("""
@@ -88,12 +88,12 @@ st.markdown("""
 
 
 
-# App title
+
 st.title("Elaa's AI Chatbot")
 st.write("Chat with me just like you're chatting with a friend! 💬🌸")
 
 
-# Input OpenAI API key
+
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 if st.button("🧹 Reset Chat"):
@@ -101,11 +101,11 @@ if st.button("🧹 Reset Chat"):
     st.rerun()
 
 
-# Initialize memory
+
 if "memory" not in st.session_state:
     st.session_state.memory = ConversationBufferMemory()
 
-# Create chatbot model when key is provided
+
 if openai_api_key:
     llm = ChatOpenAI(temperature=0, openai_api_key=openai_api_key, model_name="gpt-3.5-turbo")
     conversation = ConversationChain(
@@ -120,12 +120,12 @@ if openai_api_key:
         verbose=False
     )
     
-    # Display chat history
+    
     for msg in st.session_state.memory.chat_memory.messages:
         if msg.type == "human":
             st.chat_message("user").markdown(msg.content)
         else:
-            # Custom assistant layout
+            
             clean_response = msg.content.replace("\n", " ").replace("\n\n", " ").strip()
             st.markdown(f"""
             <div style="display: flex; align-items: center; gap: 12px; background-color: #fff3f8;
@@ -134,16 +134,16 @@ if openai_api_key:
                 <span style="font-size: 16px; color: #333;">{clean_response}</span>
             </div>
             """, unsafe_allow_html=True)
-    # Chat input
+    
     user_input = st.chat_input("Ask me anything...")
     if user_input:
         with st.spinner("Thinking..."):
             response = conversation.run(user_input)
             st.chat_message("user").markdown(user_input)
-            # Clean the message to remove extra newlines
+            
             clean_response = response.replace("\n", " ").strip()
 
-            # Show a horizontal layout: emoji + message inline
+            
             st.markdown(f"""
             <div style="display: flex; align-items: center; gap: 10px; background-color: #fef0f5;
                         padding: 10px 15px; border-radius: 12px; max-width: 90%; margin: 8px 0;">
