@@ -84,10 +84,11 @@ OPENAI_API_KEY = "your-api-key"
 ---
 
 ## 📸 Screenshot
-
-<img width="957" height="747" alt="image" src="https://github.com/user-attachments/assets/d4acae4f-b60b-41e7-bb78-8826105b1525" widh = "70px" height = "70px"/>
-<img width="937" height="792" alt="image" src="https://github.com/user-attachments/assets/f329f2e2-6b68-4ed7-8fa7-366969980f20" widh = "70px" height = "70px" />
-
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d4acae4f-b60b-41e7-bb78-8826105b1525" width="45%"/>
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://github.com/user-attachments/assets/f329f2e2-6b68-4ed7-8fa7-366969980f20" width="45%"/>
+</p>
 
 ---
 
